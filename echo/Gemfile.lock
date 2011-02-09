@@ -29,9 +29,17 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.7)
+    babosa (0.2.2)
     builder (2.1.2)
+    chronic (0.3.0)
+    delorean (0.2.1)
+      chronic
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    faker (0.9.5)
+      i18n (~> 0.4)
+    friendly_id (3.2.0)
+      babosa (~> 0.2.1)
     i18n (0.5.0)
     jquery-rails (0.2.6)
       rails (~> 3.0)
@@ -69,11 +77,16 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  delorean
+  faker
+  friendly_id (~> 3.1)
   jquery-rails
   rails (= 3.0.3)
   sqlite3-ruby
+  will_paginate
