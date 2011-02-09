@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  password: MyString
+  bio: MyString
+  paypal_email: 
+  paypal_first_name: MyString
+  paypal_last_name: MyString
+
+two:
+  name: MyString
+  email: MyString
+  password: MyString
+  bio: MyString
+  paypal_email: 
+  paypal_first_name: MyString
+  paypal_last_name: MyString

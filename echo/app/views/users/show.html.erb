@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @user.password %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @user.bio %>
+</p>
+
+<p>
+  <b>Paypal email:</b>
+  <%= @user.paypal_email %>
+</p>
+
+<p>
+  <b>Paypal first name:</b>
+  <%= @user.paypal_first_name %>
+</p>
+
+<p>
+  <b>Paypal last name:</b>
+  <%= @user.paypal_last_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  tagline: MyString
+  location: MyString
+  description: MyString
+  amount: 1
+  deadline: 2011-02-09
+  user: 
+
+two:
+  name: MyString
+  tagline: MyString
+  location: MyString
+  description: MyString
+  amount: 1
+  deadline: 2011-02-09
+  user: 
