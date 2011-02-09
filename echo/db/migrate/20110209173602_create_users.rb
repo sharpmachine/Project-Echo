@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.string :bio
-      t.string, :paypal_email
+      t.string :paypal_email
       t.string :paypal_first_name
       t.string :paypal_last_name
 
