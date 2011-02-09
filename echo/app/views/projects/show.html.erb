@@ -22,7 +22,7 @@
 
 <p>
   <b>Amount:</b>
-  <%= @project.amount %>
+  <%= number_to_currency @project.amount %>
 </p>
 
 <p>
@@ -32,7 +32,7 @@
 
 <p>
   <b>User:</b>
-  <%= @project.user %>
+  <%= link_to @project.user.name, @project.user %>
 </p>
 
 

@@ -1,35 +1,18 @@
 <h1>Listing projects</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Tagline</th>
-    <th>Location</th>
-    <th>Description</th>
-    <th>Amount</th>
-    <th>Deadline</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= will_paginate @projects %>
 
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.tagline %></td>
-    <td><%= project.location %></td>
-    <td><%= project.description %></td>
-    <td><%= project.amount %></td>
-    <td><%= project.deadline %></td>
-    <td><%= project.user %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<div class="span-5 box2 single-project">
+		<h2><%= link_to project.name, project %></h2>
+		<h5><%= project.tagline %></h5>
+		<%= simple_format project.description %>
+		<p class="amount-needed"><%= number_to_currency project.amount %></p>
+		<p class="project-deadline"><%= project.deadline %></p>
+	</div>
 <% end %>
-</table>
 
-<br />
+<div class="clear"></div>
+<%= will_paginate @projects %>
 
 <%= link_to 'New Project', new_project_path %>

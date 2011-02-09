@@ -11,29 +11,21 @@
 </p>
 
 <p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
-
-<p>
   <b>Bio:</b>
   <%= @user.bio %>
 </p>
 
-<p>
-  <b>Paypal email:</b>
-  <%= @user.paypal_email %>
-</p>
+<% if @user.projects.count > 0 %>
 
-<p>
-  <b>Paypal first name:</b>
-  <%= @user.paypal_first_name %>
-</p>
-
-<p>
-  <b>Paypal last name:</b>
-  <%= @user.paypal_last_name %>
-</p>
+	<h3>Active Projects</h3>
+	
+	<ul>
+		<% @user.projects.each do |project| %>
+			<li><%= link_to project.name, project %></li>
+		<% end %>
+	</ul>
+	
+<% end %>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
