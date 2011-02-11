@@ -1,82 +1,74 @@
-<p id="notice"><%= notice %></p>
-
-<div class="span-15"> 
-<h3>Active Campaigns</h3> 
-
-<% if @user.projects.count > 0 %>
-
-		<% @user.projects.each do |project| %>
-		
-	<h4><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/animal.jpg" width="90" height="90" alt="Shelly Kade" style="float: left;"><a href="http://localhost/project-echo/jack"><%= link_to project.name, project %></h4> 
-<p><%= project.tagline %></p> 
-<hr> 
-	<% end %>
-<% end %>
- 
-<h3>Campaigns I'm Funding</h3> 
- 
-<h4><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/puppy.jpg" width="90" height="90" alt="Shelly Kade"><a href="#">Homes for Puppies</a></h4> 
-<p>Every puppy needs a home</p> 
-<hr> 
-<h3>About Me</h3> 
-<p class="clear"><%= @user.bio %></p> 
- 
-<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/facebook.png" alt="Facebook" width="20" height="20"></a> 
-					<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/twitter.png" alt="Twitter" width="20" height="20"></a><br \> 
-					<a href="http://julio2nz.com">http://julio2nz.com</a> 
-				
-			</div> 
- 
-<div class="sidebar span-9 last"> 
-	<h3>My Recent Activity</h3> 
-	
-	<div class="supporter-list"> 
-<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/animal.jpg" width="50" height="50" alt="Shelly Kade"></a> 
-<div class="meta"> 
-	<span>Referred Someone to</span> 
-	<h4><a href="http://localhost/project-echo/jack">Partner with Julio</a></h4> 
-	<span>9 hours ago</span> 
-</div> 
-</div> 
- 
-	<div class="supporter-list"> 
-<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/animal.jpg" width="50" height="50" alt="Shelly Kade"></a> 
-<div class="meta"> 
-	<span>Referred Someone to</span> 
-	<h4><a href="#">Partner with Julio</a></h4> 
-	<span>9 hours ago</span> 
-</div> 
-</div> 
- 
-<div class="supporter-list"> 
-<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/puppy.jpg" width="50" height="50" alt="Shelly Kade"></a> 
-<div class="meta"> 
-	<span>Referred Someone to</span> 
-	<h4><a href="#">Homes for Puppies</a></h4> 
-	<span>9 hours ago</span> 
-</div> 
-</div> 
- 
-	</div> 
-	
-
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
+<p id="notice">
+	<%= notice %>
 </p>
-
+<div class="span-15">
+	<h3>
+		Active Campaigns
+	</h3><% if @user.projects.count > 0 %><% @user.projects.each do |project| %>
+	<h4>
+		<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/animal.jpg" width="90" height="90" alt="Shelly Kade" style="float: left;"><a href="http://localhost/project-echo/jack"><%= link_to project.name, project %></a>
+	</h4>
+	<p>
+		<a href="http://localhost/project-echo/jack"><%= project.tagline %></a>
+	</p>
+	<hr>
+	<% end %><% end %>
+	<h3>
+		<a href="http://localhost/project-echo/jack">Campaigns I'm Funding</a>
+	</h3>
+	<h4>
+		<a href="http://localhost/project-echo/jack"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/puppy.jpg" width="90" height="90" alt="Shelly Kade"></a><a href="#">Homes for Puppies</a>
+	</h4>
+	<p>
+		Every puppy needs a home
+	</p>
+	<hr>
+	<h3>
+		About Me
+	</h3>
+	<p class="clear">
+		<%= @user.bio %>
+	</p><a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/facebook.png" alt="Facebook" width="20" height="20"></a> <a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/twitter.png" alt="Twitter" width="20" height="20"></a><br>
+	<a href="http://julio2nz.com">http://julio2nz.com</a>
+</div>
+<div class="sidebar span-9 last">
+	<h3>
+		My Recent Activity
+	</h3>
+	<div class="supporter-list">
+		<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/animal.jpg" width="50" height="50" alt="Shelly Kade"></a>
+		<div class="meta">
+			<span>Referred Someone to</span>
+			<h4>
+				<a href="http://localhost/project-echo/jack">Partner with Julio</a>
+			</h4><span>9 hours ago</span>
+		</div>
+	</div>
+	<div class="supporter-list">
+		<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/animal.jpg" width="50" height="50" alt="Shelly Kade"></a>
+		<div class="meta">
+			<span>Referred Someone to</span>
+			<h4>
+				<a href="#">Partner with Julio</a>
+			</h4><span>9 hours ago</span>
+		</div>
+	</div>
+	<div class="supporter-list">
+		<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/puppy.jpg" width="50" height="50" alt="Shelly Kade"></a>
+		<div class="meta">
+			<span>Referred Someone to</span>
+			<h4>
+				<a href="#">Homes for Puppies</a>
+			</h4><span>9 hours ago</span>
+		</div>
+	</div>
+</div>
 <p>
-  <b>Email:</b>
-  <%= @user.email %>
+	<b>Name:</b> <%= @user.name %>
 </p>
-
 <p>
-  <b>Bio:</b>
-  <%= @user.bio %>
+	<b>Email:</b> <%= @user.email %>
 </p>
-
-
-
-
-<%= link_to 'Edit Profile', edit_user_path(@user) %> 
-
+<p>
+	<b>Bio:</b> <%= @user.bio %>
+</p><%= link_to 'Edit Profile', edit_user_path(@user) %>

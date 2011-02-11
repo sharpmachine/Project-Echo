@@ -11,41 +11,29 @@
 		<div id="dashboard-wrapper">
 			
 			<div id="db-logo">
-			<h1><%= link_to(image_tag("echo-logo.png"), root_path)%></h1>
+				<h1><%= link_to(image_tag("echo-logo.png"), root_path)%></h1>
 			</div>
 			
 			<div class="db-menu">
-				
 				<ul>
 					<li><%= link_to "Browse", projects_path %></li>
 					<li><%= link_to "Create", new_project_path %></li>
 					<li><%= link_to "FAQ", "faq" %></li>
 					<li><%= link_to "Blog", "blog" %></li>
 				</ul>
-				</div>
+			</div>
 				
 				<div class="network-search">
 					
 				</div>
-				
-				
 			
 			</div>
 		</div>
 	</div>
 	
-	<div class="wrapper">
+	<div class="wrapper"> 
 		
-		<header> 
-	
-			<div id="logo"> 
-			<h1><%#= @project.name %><%#= @user.name %></h1> 
-			<h4><%#= @project.tagline %></h4> 
-			<span>Created by <%#= link_to @project.user.name, @project.user %></span> 
-			</div> 
-		 
-		</header> 
-		
+		<%= yield :header %>
 		
 		<div class="container">
 			<%= yield %>
