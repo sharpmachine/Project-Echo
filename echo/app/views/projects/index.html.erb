@@ -3,12 +3,32 @@
 <%= will_paginate @projects %>
 
 <% @projects.each do |project| %>
-	<div class="span-5 box2 single-project">
+	<div class="span-5 single-project">
+		
+		<%= link_to(image_tag("project-thumb.jpg"), root_path)%>
+		<div class="project-details-wrap">
 		<h2><%= link_to project.name, project %></h2>
-		<h5><%= project.tagline %></h5>
+		<h5>By:  <%= link_to project.user.name, project.user %></h5>
+		<p><%= project.tagline %></p>
+		
+		</div>
+		<!--
 		<%= simple_format project.description %>
-		<p class="amount-needed"><%= number_to_currency project.amount %></p>
-		<p class="project-deadline"><%= project.deadline %></p>
+		-->
+		<span class="project-location"><%= link_to(image_tag("marker-location.png"), root_path)%><%= project.location %></span>
+		
+		<div class="project-progress-wrap">
+		<div class="project-progress" style="width: 31%;"></div>
+		</div>
+		
+		<div class="progress-numbers">
+		<div class="progress-percentage">31%<span>Funded</span></div>
+		<div class="amount-promised"><%= number_to_currency project.amount %><span>Promised</span></div>
+		<div class="span-2 last days-left">57<span>Days Left</span></div>
+		</div>
+		<!--
+		<div class="span-2 last project-deadline"><%= project.deadline %></div>
+	-->
 	</div>
 <% end %>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project: Echo</title>
+  <title>Project Echo</title>
   <%= stylesheet_link_tag "screen", "style" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -27,12 +27,26 @@
 				<div class="network-search">
 					
 				</div>
+				
+				
 			
 			</div>
 		</div>
 	</div>
 	
 	<div class="wrapper">
+		
+		<header> 
+	
+			<div id="logo"> 
+			<h1><%#= @project.name %><%#= @user.name %></h1> 
+			<h4><%#= @project.tagline %></h4> 
+			<span>Created by <%#= link_to @project.user.name, @project.user %></span> 
+			</div> 
+		 
+		</header> 
+		
+		
 		<div class="container">
 			<%= yield %>
 		</div>
