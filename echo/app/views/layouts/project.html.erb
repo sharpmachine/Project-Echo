@@ -2,7 +2,11 @@
 <body id="project" class="<%= controller.controller_name %>">
 	<%= render "shared/navigation" %>
 	
-	<div class="wrapper"> 
+	<div class="wrapper">
+		<% content_for :header do %>
+			<%= render "projects/tagline", project: @project %>
+		<% end %>
+		
 		<%= yield :header %>
 		
 		<div class="container">
