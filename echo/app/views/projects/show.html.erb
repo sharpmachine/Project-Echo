@@ -2,131 +2,53 @@
 	<%= render "shared/project_tagline", project: @project %>
 <% end %>
 
-
-<p id="notice"><%= notice %></p>
-<nav>			
-	<ul>
-		<li class="current"><%= link_to "Home", @project %></li>
-		<li><%= link_to(raw("#{pluralize_without_count("Comment", @project.comments.count)} <span>#{@project.comments.count}</span>"), project_comments_path(@project))%></li>
-		<li><%= link_to(raw("#{pluralize_without_count("Update", @project.updates.count)} <span>#{@project.updates.count}</span>"), project_updates_path(@project))%></li>
-		<li><%= link_to(raw("#{pluralize_without_count("Blog", @project.blogs.count)} <span>#{@project.blogs.count}</span>"), project_blogs_path(@project))%></li>
-		<li><a href="http://localhost/project-echo/jack/supporters">Supporters <span>10</span></a></li> 
-	</ul> 
-</nav> 
+<%= render "shared/project_nav", project: @project %>
 
 <div class="page span-15">
 
-<iframe title="YouTube video player" class="youtube-player" type="text/html" width="569" height="456" src="http://www.youtube.com/embed/ZNNIg4zO5dM?rel=0" frameborder="0" allowFullScreen></iframe>
+	<iframe title="YouTube video player" class="youtube-player" type="text/html" width="569" height="456" src="http://www.youtube.com/embed/ZNNIg4zO5dM?rel=0" frameborder="0" allowFullScreen></iframe>
 
-<div class="box share-campaign">
-	<a href="#"><img src="http://www.indiegogo.com/images/button_share_facebook.PNG?1288825226" alt="" width="131"></a>
-	<a href="#"><img src="http://www.indiegogo.com/images/button_share_twitter.PNG?1288825226" alt="" width="131"></a>
-	<a href="#"><img src="http://www.indiegogo.com/images/button_share_email.PNG?1288825226" alt="" width="131"></a>
-	<a href="#"><img src="http://www.indiegogo.com/images/button_share_widget.PNG?1288825226" alt="" width="131"></a>
+	<div class="box share-campaign">
+		<a href="#"><img src="http://www.indiegogo.com/images/button_share_facebook.PNG?1288825226" alt="" width="131"></a>
+		<a href="#"><img src="http://www.indiegogo.com/images/button_share_twitter.PNG?1288825226" alt="" width="131"></a>
+		<a href="#"><img src="http://www.indiegogo.com/images/button_share_email.PNG?1288825226" alt="" width="131"></a>
+		<a href="#"><img src="http://www.indiegogo.com/images/button_share_widget.PNG?1288825226" alt="" width="131"></a>
 
-	<hr />
-	<h4>Share this campaign:<input type="text" value="<%= project_path(@project, :only_path => false) %>"><span>Copy &amp; paste away!</span></h4>
-</div>
-
-<h1 class="box-title">The Lowdown</h1>
-<div class="box">			
-	<p><%= @project.description %></p>
-</div>
-
-<% if @project.blogs.count > 0 %>
-	<h1 class="box-title">Recent Blog Post</h1>
-	<div class="box blog-excerpt">
-
-
-		<div id="post-44" class="post-44 post type-post hentry category-uncategorized">
-
-			<h2 class="entry-title"><%= @project.blogs.last.title %></h2>
-		
-			<div class="pimp-entry-meta">
-				<span class="month"><%= @project.blogs.last.created_at.strftime("%b") %></span>
-				<span class="day"><%= @project.blogs.last.created_at.strftime("%d") %></span>
-				<span class="year"><%= @project.blogs.last.created_at.strftime("%y") %></span>
-			</div>
-		
-			<div class="entry-content">
-				<p>
-					<%= simple_format(truncate(@project.blogs.last.content, :length => 150)) %><%= link_to(raw("Continue Reading <span class=\"meta-nav\">&rarr;</span>"), project_blog_path(@project.blogs.last)) %>
-				</p> 
-			</div><!-- .entry-content -->
-		</div><!-- #post-## -->
+		<hr />
+		<h4>Share this campaign:<input type="text" value="<%= project_path(@project, :only_path => false) %>"><span>Copy &amp; paste away!</span></h4>
 	</div>
-<% end %>
+
+	<h1 class="box-title">The Lowdown</h1>
+	<div class="box">			
+		<p><%= @project.description %></p>
+	</div>
+
+	<% if @project.blogs.count > 0 %>
+		<h1 class="box-title">Recent Blog Post</h1>
+		<div class="box blog-excerpt">
+
+
+			<div id="post-44" class="post-44 post type-post hentry category-uncategorized">
+
+				<h2 class="entry-title"><%= @project.blogs.last.title %></h2>
+		
+				<div class="pimp-entry-meta">
+					<span class="month"><%= @project.blogs.last.created_at.strftime("%b") %></span>
+					<span class="day"><%= @project.blogs.last.created_at.strftime("%d") %></span>
+					<span class="year"><%= @project.blogs.last.created_at.strftime("%y") %></span>
+				</div>
+		
+				<div class="entry-content">
+					<p>
+						<%= simple_format(truncate(@project.blogs.last.content, :length => 150)) %><%= link_to(raw("Continue Reading <span class=\"meta-nav\">&rarr;</span>"), project_blog_path(@project.blogs.last)) %>
+					</p> 
+				</div><!-- .entry-content -->
+			</div><!-- #post-## -->
+		</div>
+	<% end %>
 </div>
-<!--start sidebar--> 
-<div class="sidebar span-9 last"> 
 
-<div class="box funding"> 
-	<p>
-<b>Deadline:</b>
-<%= @project.deadline %>
-</p>
-	<div class="num">10<span>Supporters</span></div> 
-	<div class="num">$2,133<span>pledged of <%= number_to_currency @project.amount %> goal</span></div> 
-	<div class="num"><a href="funding" class="button">Support This</a></div> 
-</div> 
-
-<div class="box funding" style="display: none;"> 
-	<h3>Mission Trip</h3> 
-	<div class="num">46<span>Supporters</span></div> 
-	<div class="num">$500<span>pledged of $2,000 goal</span></div> 
-	<div class="num"><a href="funding" class="button">Support This</a></div> 
-</div> 
-
-<h1 class="box-title">Campaign By:</h1> 
-<div class="box bio">
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Julio.jpg" width="80" height="80" alt="Julio" class="bio-thumb"> 
-	<h4><%= link_to @project.user.name, @project.user %></h4> 
-	<span class="location"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/location.png" alt="Location"><%= @project.location %></span> 
-	<span class="send-message"><a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/email.png" alt="Location" width="20" height="20">Send Me a Message</a></span> 
-	<span class="social"></span> 
-	<p class="clear"><%= @project.user.bio %></p>
-	<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/facebook.png" alt="Facebook" width="20" height="20"></a> 
-	<a href="#"><img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/twitter.png" alt="Twitter" width="20" height="20"></a><br \> 
-	<a href="http://julio2nz.com">http://julio2nz.com</a>
-</div> 
-
-<h1 class="box-title">Supporters</h1> 
-<div class="box supporters">
-
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Shelly Kade.jpg" width="50" height="50" alt="Shelly Kade"> 
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Roxanne Grace.jpg" width="50" height="50" alt="Roxanne Grace"> 
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Nathan Pratt.jpg" width="50" height="50" alt="Nathan Pratt"> 
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Nicki Dutton.jpg" width="50" height="50" alt="Nicki Dutton"> 
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Mary Skelton.jpg" width="50" height="50" alt="Mary Skelton"> 
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Damaris Rothlisberger.jpg" width="50" height="50" alt="Damaris Rothlisberger"> 
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Barbara Kealiinohomoku.jpg" width="50" height="50" alt="Barbara Kealiinohomoku"> 
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Shannen Kuntz.jpg" width="50" height="50" alt="Shannen Kuntz">	
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Mark A.jpg" width="50" height="50" alt="Mark A"> 
-	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/jessekadegettinpaid.jpg" width="50" height="50" alt="Jessekadegettinpaid"> 
-
-	<a href="http://localhost/project-echo/jack/supporters">See All</a> 
-
-</div> 
-
-
-<h1 class="box-title">Lastest Update</h1> 
-<div class="box">
-<h3>Man cured of baldness</h3> 
-<span>10 days ago</span> 
-<p>The other day I was praying for this old man and suddenly his hair began to grow right in front of me.  It was so awesome.</p> 
-<a href="http://localhost/project-echo/jack/updates">See All</a> 
-</div> 
-
-<h1 class="box-title">Recent Comments</h1> 
-<div class="box"> 
-
-
-<p>NEw Commenssdsdd<br><em>&mdash; Julio Garcia&nbsp;10 days ago</em></p><p>Dude can I come live with you?  We can be sheep hearders, it will be crazy fun.  Wool underwear, yeah...<br><em>&mdash; Jesse Kade&nbsp;10 days ago</em></p><p>Man this is awesome.  Really super awesome.<br><em>&mdash; Jesse Kade&nbsp;10 days ago</em></p>		
-<a href="http://localhost/project-echo/jack/comments">See All</a>	
-
-</div> 
-
-</div><!--end sidebar--> 
+<%= render "shared/project_details", project: @project %>
 
 
 

@@ -1,25 +1,14 @@
-<h1>Listing updates</h1>
-
-<table>
-  <tr>
-    <th>Project</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @updates.each do |update| %>
-  <tr>
-    <td><%= update.project %></td>
-    <td><%= update.content %></td>
-    <td><%= link_to 'Show', update %></td>
-    <td><%= link_to 'Edit', edit_update_path(update) %></td>
-    <td><%= link_to 'Destroy', update, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% content_for :header do %>
+	<%= render "shared/project_tagline", project: @project %>
 <% end %>
-</table>
 
-<br />
+<%= render "shared/project_nav", project: @project %>
 
-<%= link_to 'New Update', new_update_path %>
+<div class="page span-15">
+	<% @updates.each do |update| %>
+		<div><%= update.content %></div>
+	<% end %>
+
+	<%= link_to 'New Update', new_project_update_path %>
+</div>
+<%= render "shared/project_details", project: @project %>

@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
-  # GET /comments
-  # GET /comments.xml
+  
+  before_filter :load_project
+  
   def index
-    @comments = Comment.all
+    @comments = @project.comments
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,10 @@ class CommentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+    def load_project
+      @project = Project.find(params[:project_id])
+    end
 end

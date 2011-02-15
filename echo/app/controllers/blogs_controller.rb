@@ -1,8 +1,9 @@
 class BlogsController < ApplicationController
-  # GET /blogs
-  # GET /blogs.xml
+  
+  before_filter :load_project
+  
   def index
-    @blogs = Blog.all
+    @blogs = @project.blogs
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,10 @@ class BlogsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+    def load_project
+      @project = Project.find(params[:project_id])
+    end
 end

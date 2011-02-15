@@ -1,25 +1,14 @@
-<h1>Listing blogs</h1>
-
-<table>
-  <tr>
-    <th>Project</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.project %></td>
-    <td><%= blog.content %></td>
-    <td><%= link_to 'Show', blog %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% content_for :header do %>
+	<%= render "shared/project_tagline", project: @project %>
 <% end %>
-</table>
 
-<br />
+<%= render "shared/project_nav", project: @project %>
 
-<%= link_to 'New Blog', new_blog_path %>
+<div class="page span-15">
+<% @blogs.each do |blog| %>
+    <div><%= blog.content %></div>
+<% end %>
+</div>
+
+<%= link_to 'New Blog', new_project_blog_path %>
+<%= render "shared/project_details", project: @project %>

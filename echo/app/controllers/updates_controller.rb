@@ -1,44 +1,27 @@
 class UpdatesController < ApplicationController
-  # GET /updates
-  # GET /updates.xml
+  
+  before_filter :load_project
+  
   def index
-    @updates = Update.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @updates }
-    end
+    @updates = @project.updates
   end
 
-  # GET /updates/1
-  # GET /updates/1.xml
+
   def show
     @update = Update.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @update }
-    end
   end
 
-  # GET /updates/new
-  # GET /updates/new.xml
+
   def new
     @update = Update.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @update }
-    end
   end
 
-  # GET /updates/1/edit
+
   def edit
     @update = Update.find(params[:id])
   end
 
-  # POST /updates
-  # POST /updates.xml
+
   def create
     @update = Update.new(params[:update])
 
@@ -53,8 +36,7 @@ class UpdatesController < ApplicationController
     end
   end
 
-  # PUT /updates/1
-  # PUT /updates/1.xml
+
   def update
     @update = Update.find(params[:id])
 
@@ -69,8 +51,7 @@ class UpdatesController < ApplicationController
     end
   end
 
-  # DELETE /updates/1
-  # DELETE /updates/1.xml
+
   def destroy
     @update = Update.find(params[:id])
     @update.destroy
@@ -80,4 +61,11 @@ class UpdatesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
+  private
+  
+    def load_project
+      @project = Project.find(params[:project_id])
+    end
 end

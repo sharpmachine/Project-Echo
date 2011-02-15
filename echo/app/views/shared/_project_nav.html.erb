@@ -1,0 +1,9 @@
+<nav>			
+	<ul>
+		<li class="current"><%= link_to "Home", project %></li>
+		<li><%= link_to(raw("#{pluralize_without_count("Comment", project.comments.count)} <span>#{project.comments.count}</span>"), project_comments_path(project))%></li>
+		<li><%= link_to(raw("#{pluralize_without_count("Update", project.updates.count)} <span>#{project.updates.count}</span>"), project_updates_path(project))%></li>
+		<li><%= link_to(raw("#{pluralize_without_count("Blog", project.blogs.count)} <span>#{project.blogs.count}</span>"), project_blogs_path(project))%></li>
+		<li><a href="http://localhost/project-echo/jack/supporters">Supporters <span>10</span></a></li> 
+	</ul> 
+</nav>
