@@ -1,23 +1,15 @@
 class ProjectsController < ApplicationController
   
-  layout "project"
-  
   def index
     @projects = Project.paginate(:page => params[:page])
-
-    respond_to do |format|
-      format.html { render layout: "application" }
-    end
   end
 
   # GET /projects/1
   # GET /projects/1.xml
   def show
     @project = Project.find(params[:id])
-
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @project }
+      format.html { render layout: "project" }
     end
   end
 
@@ -25,11 +17,6 @@ class ProjectsController < ApplicationController
   # GET /projects/new.xml
   def new
     @project = Project.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @project }
-    end
   end
 
   # GET /projects/1/edit

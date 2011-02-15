@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Project Echo</title>
-  <%= stylesheet_link_tag "screen", "style" %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
+<%= render "shared/meta" %>
 <body id="project" class="<%= controller.controller_name %>">
 	<%= render "shared/navigation" %>
 	
@@ -24,6 +17,5 @@
 		
 		<%= render "shared/footer" %>
 	</div>
-	
 </body>
 </html>
