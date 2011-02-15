@@ -129,6 +129,10 @@ header span { font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Verdan
   float: left;
   width: 960px;
 }
+span.user-menu {
+  float: right;
+  margin-right: 20px;
+}
 #info {
   width: 400px;
   float: right;

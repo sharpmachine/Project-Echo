@@ -2,6 +2,8 @@
 	<%= render "shared/project_tagline", project: @project %>
 <% end %>
 
+
+<p id="notice"><%= notice %></p>
 <nav>			
 	<ul>
 		<li class="current"><%= link_to "Home", @project %></li>
@@ -9,6 +11,7 @@
 		<li><%= link_to(raw("#{pluralize_without_count("Update", @project.updates.count)} <span>#{@project.updates.count}</span>"), project_updates_path(@project))%></li>
 		<li><%= link_to(raw("#{pluralize_without_count("Blog", @project.blogs.count)} <span>#{@project.blogs.count}</span>"), project_blogs_path(@project))%></li>
 		<li><a href="http://localhost/project-echo/jack/supporters">Supporters <span>10</span></a></li> 
+		<li><%= link_to 'Edit', edit_project_path(@project) %></li>
 	</ul> 
 </nav> 
 
@@ -59,6 +62,10 @@
 <div class="sidebar span-9 last"> 
 
 <div class="box funding"> 
+	<p>
+<b>Deadline:</b>
+<%= @project.deadline %>
+</p>
 	<div class="num">10<span>Supporters</span></div> 
 	<div class="num">$2,133<span>pledged of <%= number_to_currency @project.amount %> goal</span></div> 
 	<div class="num"><a href="funding" class="button">Support This</a></div> 
@@ -124,43 +131,5 @@
 
 
 
-<p id="notice"><%= notice %></p>
-
-<p>
-<b>Name:</b>
-<%= @project.name %>
-</p>
-
-<p>
-<b>Tagline:</b>
-<%= @project.tagline %>
-</p>
-
-<p>
-<b>Location:</b>
-<%= @project.location %>
-</p>
-
-<p>
-<b>Description:</b>
-<%= @project.description %>
-</p>
-
-<p>
-<b>Amount:</b>
-<%= number_to_currency @project.amount %>
-</p>
-
-<p>
-<b>Deadline:</b>
-<%= @project.deadline %>
-</p>
-
-<p>
-<b>User:</b>
-<%= link_to @project.user.name, @project.user %>
-</p>
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
