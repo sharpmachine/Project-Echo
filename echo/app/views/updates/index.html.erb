@@ -1,14 +1,3 @@
-<% content_for :header do %>
-	<%= render "shared/project_tagline", project: @project %>
+<% @updates.each do |update| %>
+	<div><%= update.content %></div>
 <% end %>
-
-<%= render "shared/project_nav", project: @project %>
-
-<div class="page span-15">
-	<% @updates.each do |update| %>
-		<div><%= update.content %></div>
-	<% end %>
-
-	<%= link_to 'New Update', new_project_update_path %>
-</div>
-<%= render "shared/project_details", project: @project %>

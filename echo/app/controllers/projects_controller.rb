@@ -1,12 +1,12 @@
 class ProjectsController < ApplicationController
-  # GET /projects
-  # GET /projects.xml
+  
+  layout "project"
+  
   def index
     @projects = Project.paginate(:page => params[:page])
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @projects }
+      format.html { render layout: "application" }
     end
   end
 

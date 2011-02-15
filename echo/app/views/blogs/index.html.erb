@@ -1,14 +1,3 @@
-<% content_for :header do %>
-	<%= render "shared/project_tagline", project: @project %>
-<% end %>
-
-<%= render "shared/project_nav", project: @project %>
-
-<div class="page span-15">
 <% @blogs.each do |blog| %>
     <div><%= blog.content %></div>
 <% end %>
-</div>
-
-<%= link_to 'New Blog', new_project_blog_path %>
-<%= render "shared/project_details", project: @project %>

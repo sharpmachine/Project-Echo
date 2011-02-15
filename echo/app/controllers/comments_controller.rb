@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   
+  layout "project"
   before_filter :load_project
   
   def index
@@ -82,9 +83,5 @@ class CommentsController < ApplicationController
     end
   end
   
-  private
   
-    def load_project
-      @project = Project.find(params[:project_id])
-    end
 end

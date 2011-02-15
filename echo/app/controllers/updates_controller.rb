@@ -1,5 +1,6 @@
 class UpdatesController < ApplicationController
   
+  layout "project"
   before_filter :load_project
   
   def index
@@ -61,11 +62,4 @@ class UpdatesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  
-  private
-  
-    def load_project
-      @project = Project.find(params[:project_id])
-    end
 end

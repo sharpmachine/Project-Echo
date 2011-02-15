@@ -1,56 +1,40 @@
-<% content_for :header do %>
-	<%= render "shared/project_tagline", project: @project %>
-<% end %>
+<iframe title="YouTube video player" class="youtube-player" type="text/html" width="569" height="456" src="http://www.youtube.com/embed/ZNNIg4zO5dM?rel=0" frameborder="0" allowFullScreen></iframe>
 
-<%= render "shared/project_nav", project: @project %>
+<div class="box share-campaign">
+	<a href="#"><img src="http://www.indiegogo.com/images/button_share_facebook.PNG?1288825226" alt="" width="131"></a>
+	<a href="#"><img src="http://www.indiegogo.com/images/button_share_twitter.PNG?1288825226" alt="" width="131"></a>
+	<a href="#"><img src="http://www.indiegogo.com/images/button_share_email.PNG?1288825226" alt="" width="131"></a>
+	<a href="#"><img src="http://www.indiegogo.com/images/button_share_widget.PNG?1288825226" alt="" width="131"></a>
 
-<div class="page span-15">
-
-	<iframe title="YouTube video player" class="youtube-player" type="text/html" width="569" height="456" src="http://www.youtube.com/embed/ZNNIg4zO5dM?rel=0" frameborder="0" allowFullScreen></iframe>
-
-	<div class="box share-campaign">
-		<a href="#"><img src="http://www.indiegogo.com/images/button_share_facebook.PNG?1288825226" alt="" width="131"></a>
-		<a href="#"><img src="http://www.indiegogo.com/images/button_share_twitter.PNG?1288825226" alt="" width="131"></a>
-		<a href="#"><img src="http://www.indiegogo.com/images/button_share_email.PNG?1288825226" alt="" width="131"></a>
-		<a href="#"><img src="http://www.indiegogo.com/images/button_share_widget.PNG?1288825226" alt="" width="131"></a>
-
-		<hr />
-		<h4>Share this campaign:<input type="text" value="<%= project_path(@project, :only_path => false) %>"><span>Copy &amp; paste away!</span></h4>
-	</div>
-
-	<h1 class="box-title">The Lowdown</h1>
-	<div class="box">			
-		<p><%= @project.description %></p>
-	</div>
-
-	<% if @project.blogs.count > 0 %>
-		<h1 class="box-title">Recent Blog Post</h1>
-		<div class="box blog-excerpt">
-
-
-			<div id="post-44" class="post-44 post type-post hentry category-uncategorized">
-
-				<h2 class="entry-title"><%= @project.blogs.last.title %></h2>
-		
-				<div class="pimp-entry-meta">
-					<span class="month"><%= @project.blogs.last.created_at.strftime("%b") %></span>
-					<span class="day"><%= @project.blogs.last.created_at.strftime("%d") %></span>
-					<span class="year"><%= @project.blogs.last.created_at.strftime("%y") %></span>
-				</div>
-		
-				<div class="entry-content">
-					<p>
-						<%= simple_format(truncate(@project.blogs.last.content, :length => 150)) %><%= link_to(raw("Continue Reading <span class=\"meta-nav\">&rarr;</span>"), project_blog_path(@project.blogs.last)) %>
-					</p> 
-				</div><!-- .entry-content -->
-			</div><!-- #post-## -->
-		</div>
-	<% end %>
+	<hr />
+	<h4>Share this campaign:<input type="text" value="<%= project_path(@project, :only_path => false) %>"><span>Copy &amp; paste away!</span></h4>
 </div>
 
-<%= render "shared/project_details", project: @project %>
+<h1 class="box-title">The Lowdown</h1>
+<div class="box">			
+	<p><%= @project.description %></p>
+</div>
+
+<% if @project.blogs.count > 0 %>
+	<h1 class="box-title">Recent Blog Post</h1>
+	<div class="box blog-excerpt">
 
 
+		<div id="post-44" class="post-44 post type-post hentry category-uncategorized">
 
-
-
+			<h2 class="entry-title"><%= @project.blogs.last.title %></h2>
+	
+			<div class="pimp-entry-meta">
+				<span class="month"><%= @project.blogs.last.created_at.strftime("%b") %></span>
+				<span class="day"><%= @project.blogs.last.created_at.strftime("%d") %></span>
+				<span class="year"><%= @project.blogs.last.created_at.strftime("%y") %></span>
+			</div>
+	
+			<div class="entry-content">
+				<p>
+					<%= simple_format(truncate(@project.blogs.last.content, :length => 150)) %><%= link_to(raw("Continue Reading <span class=\"meta-nav\">&rarr;</span>"), project_blog_path(@project.blogs.last)) %>
+				</p> 
+			</div><!-- .entry-content -->
+		</div><!-- #post-## -->
+	</div>
+<% end %>
