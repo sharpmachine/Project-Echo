@@ -24,7 +24,7 @@
 		<div class="progress-numbers">
 			<div class="progress-percentage">31%<span>Funded</span></div>
 			<div class="amount-promised"><%= number_to_currency project.amount %><span>Promised</span></div>
-			<div class="span-2 last days-left"><%= time_ago_in_words(project.deadline) %><span>Left</span></div>
+			<div class="span-2 last days-left"><%= time_ago_in_words(project.deadline) %><span> Days Left</span></div>
 		</div>
 	</div>
 <% end %>
