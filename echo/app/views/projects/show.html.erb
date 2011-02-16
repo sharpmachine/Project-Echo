@@ -7,7 +7,30 @@
 	<a href="#"><img src="http://www.indiegogo.com/images/button_share_widget.PNG?1288825226" alt="" width="131"></a>
 
 	<hr />
-	<h4>Share this campaign:<input type="text" value="<%= project_path(@project, :only_path => false) %>"><span>Copy &amp; paste away!</span></h4>
+	<h4>Share this campaign:<input type="text" value="<%= project_path(@project, :only_path => false) %>"><span id="clippy-tooltip" title="Copy to Clipboard"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+          width="110"
+          height="14"
+          id="clippy">
+    <param name="movie" value="/swfs/clippy.swf"/>
+    <param name="allowScriptAccess" value="always" />
+    <param name="quality" value="high" />
+    <param name="scale" value="noscale" />
+    <param NAME="FlashVars" value="text=<%= project_path(@project, :only_path => false) %>">
+    <param name="bgcolor" value="#ffffff">
+    <embed src="/swfs/clippy.swf"
+           width="14"
+           height="14"
+           name="clippy"
+           quality="high"
+           allowScriptAccess="always"
+           type="application/x-shockwave-flash"
+           pluginspage="http://www.macromedia.com/go/getflashplayer"
+           FlashVars="text=<%= project_path(@project, :only_path => false) %>"
+           bgcolor="#ffffff"
+           />
+  </object>
+  </span>
+  </h4>
 </div>
 
 <h1 class="box-title">The Lowdown</h1>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Clippy test</title>
+
+  <script type="text/javascript">
+    function getKeyword() {
+      return prompt("What text shall I copy to your clipboard?");
+    }
+    function textCopied(text) {
+      alert('textCopied callback: The following text has been copied to the clipboard\n'+text);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Testing Clippy</h1>
+
+  <label for="paste-test">This textarea is here for paste testing:</label><br/>
+  <textarea id="paste-test" rows="2" cols="60"></textarea>
+
+  <hr/>
+  <h2>With <tt>text</tt> parameter</h2>
+  <p><small>paramter is set to "árvíztűrő tükörfúrógép"</small></p>
+  <p><small>this clippy instance is localized to Hungarian and will call the <tt>textCopied</tt> js callback</small></p>
+
+  <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+          width="110"
+          height="14"
+          id="clippy">
+    <param name="movie" value="clippy.swf"/>
+    <param name="allowScriptAccess" value="always" />
+    <param name="quality" value="high" />
+    <param name="scale" value="noscale" />
+    <param NAME="FlashVars" value="text=árvíztűrő+tükörfúrógép&amp;copied=vágólapra+másolva&amp;copyto=másolás+vágólapra&amp;callBack=textCopied">
+    <param name="bgcolor" value="#ffffff">
+    <embed src="clippy.swf"
+           width="110"
+           height="14"
+           name="clippy"
+           quality="high"
+           allowScriptAccess="always"
+           type="application/x-shockwave-flash"
+           pluginspage="http://www.macromedia.com/go/getflashplayer"
+           FlashVars="text=árvíztűrő+tükörfúrógép&amp;copied=vágólapra+másolva&amp;copyto=másolás+vágólapra&amp;callBack=textCopied"
+           bgcolor="#ffffff"
+           />
+  </object>
+
+  <hr/>
+  <h2>With <tt>id</tt> parameter</h2>
+  <p><small><tt>id</tt> is set to the id of the textarea below</small></p>
+
+  <textarea id="test-area" rows="2" cols="40">Árvíztűrő Tükörfúrógép</textarea>
+  <br/>
+
+  <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+          width="110"
+          height="14"
+          id="clippy">
+    <param name="movie" value="clippy.swf"/>
+    <param name="allowScriptAccess" value="always" />
+    <param name="quality" value="high" />
+    <param name="scale" value="noscale" />
+    <param NAME="FlashVars" value="id=test-area">
+    <param name="bgcolor" value="#ffffff">
+    <embed src="clippy.swf"
+           width="110"
+           height="14"
+           name="clippy"
+           quality="high"
+           allowScriptAccess="always"
+           type="application/x-shockwave-flash"
+           pluginspage="http://www.macromedia.com/go/getflashplayer"
+           FlashVars="id=test-area"
+           bgcolor="#ffffff"
+           />
+  </object>
+
+  <hr/>
+  <h2>With <tt>call</tt> parameter</h2>
+  <p><small><tt>call</tt> is set to the <tt>getKeyword</tt> js function</small></p>
+
+  <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+          width="110"
+          height="14"
+          id="clippy">
+    <param name="movie" value="clippy.swf"/>
+    <param name="allowScriptAccess" value="always" />
+    <param name="quality" value="high" />
+    <param name="scale" value="noscale" />
+    <param NAME="FlashVars" value="call=getKeyword">
+    <param name="bgcolor" value="#ffffff">
+    <embed src="clippy.swf"
+           width="110"
+           height="14"
+           name="clippy"
+           quality="high"
+           allowScriptAccess="always"
+           type="application/x-shockwave-flash"
+           pluginspage="http://www.macromedia.com/go/getflashplayer"
+           FlashVars="call=getKeyword"
+           bgcolor="#ffffff"
+           />
+  </object>
+</body>
