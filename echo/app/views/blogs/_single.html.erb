@@ -3,7 +3,7 @@
 
 	<div id="post-44" class="post-44 post type-post hentry category-uncategorized">
 
-		<h2 class="entry-title"><%= post.title %></h2>
+		<h2 class="entry-title"><%#= post.title %><a href="#">Post Title</a></h2>
 
 		<div class="pimp-entry-meta">
 			<span class="month"><%= post.created_at.strftime("%b") %></span>
@@ -13,7 +13,7 @@
 
 		<div class="entry-content">
 			<p>
-				<%= simple_format(truncate(post.content, :length => 150)) %><%= link_to(raw("Continue Reading <span class=\"meta-nav\">&rarr;</span>"), project_blog_path(@project, post)) %>
+				<%= simple_format(truncate(post.content, :length => 600) +  link_to(raw(" Continue Reading <span class=\"meta-nav\">&rarr;</span>"), project_blog_path(@project, post))) %>
 			</p> 
 		</div><!-- .entry-content -->
 	</div><!-- #post-## -->

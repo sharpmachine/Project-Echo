@@ -12,14 +12,6 @@
 	<div class="num"><a href="funding" class="button">Support This</a></div> 
 </div> 
 
-<div class="box funding" style="display: none;"> 
-	<h3>Mission Trip</h3> 
-	<div class="num">46<span>Supporters</span></div> 
-	<div class="num">$500<span>pledged of $2,000 goal</span></div> 
-	<div class="num">58<span>days to go</span></div> 
-	<div class="num"><a href="funding" class="button">Support This</a></div> 
-</div> 
-
 <h1 class="box-title">Campaign By:</h1> 
 <div class="box bio">
 	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Julio.jpg" width="80" height="80" alt="Julio" class="bio-thumb"> 
@@ -35,7 +27,6 @@
 
 <h1 class="box-title">Supporters</h1> 
 <div class="box supporters">
-
 	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Shelly Kade.jpg" width="50" height="50" alt="Shelly Kade"> 
 	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Roxanne Grace.jpg" width="50" height="50" alt="Roxanne Grace"> 
 	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Nathan Pratt.jpg" width="50" height="50" alt="Nathan Pratt"> 
@@ -46,24 +37,20 @@
 	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Shannen Kuntz.jpg" width="50" height="50" alt="Shannen Kuntz">	
 	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/Mark A.jpg" width="50" height="50" alt="Mark A"> 
 	<img src="http://localhost/project-echo/jack/wp-content/themes/project-echo/images/jessekadegettinpaid.jpg" width="50" height="50" alt="Jessekadegettinpaid"> 
-
 	<a href="http://localhost/project-echo/jack/supporters">See All</a> 
-
 </div> 
 
-
 <h1 class="box-title">Lastest Update</h1> 
-<div class="box">
-<h3>Man cured of baldness</h3> 
-<span>10 days ago</span> 
-<p>The other day I was praying for this old man and suddenly his hair began to grow right in front of me.  It was so awesome.</p> 
-<a href="http://localhost/project-echo/jack/updates">See All</a> 
+	<div class="box">
+		<span>10 days ago</span> 
+		<% if @project.blogs.count > 0 %>
+		<p><%= @project.updates.last.content %></p>
+		<% end %>
+		<%= link_to(raw("See All"), project_updates_path(project))%>
 </div> 
 
 <h1 class="box-title">Recent Comments</h1> 
 <div class="box"> 
-
-
 <p>NEw Commenssdsdd<br><em>&mdash; Julio Garcia&nbsp;10 days ago</em></p><p>Dude can I come live with you?  We can be sheep hearders, it will be crazy fun.  Wool underwear, yeah...<br><em>&mdash; Jesse Kade&nbsp;10 days ago</em></p><p>Man this is awesome.  Really super awesome.<br><em>&mdash; Jesse Kade&nbsp;10 days ago</em></p>		
 <a href="http://localhost/project-echo/jack/comments">See All</a>	
 
