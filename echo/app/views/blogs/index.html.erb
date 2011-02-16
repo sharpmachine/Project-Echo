@@ -1,4 +1,4 @@
 <% @blogs.each do |blog| %>
-    <p><%= blog.content %></p>
+    <%= render "blogs/single", post: blog %>
 <% end %>
 

@@ -1,0 +1,20 @@
+<div class="box blog-excerpt">
+
+
+	<div id="post-44" class="post-44 post type-post hentry category-uncategorized">
+
+		<h2 class="entry-title"><%= post.title %></h2>
+
+		<div class="pimp-entry-meta">
+			<span class="month"><%= post.created_at.strftime("%b") %></span>
+			<span class="day"><%= post.created_at.strftime("%d") %></span>
+			<span class="year"><%= post.created_at.strftime("%y") %></span>
+		</div>
+
+		<div class="entry-content">
+			<p>
+				<%= simple_format(truncate(post.content, :length => 150)) %><%= link_to(raw("Continue Reading <span class=\"meta-nav\">&rarr;</span>"), project_blog_path(@project, post)) %>
+			</p> 
+		</div><!-- .entry-content -->
+	</div><!-- #post-## -->
+</div>
