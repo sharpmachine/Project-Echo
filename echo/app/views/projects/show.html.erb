@@ -1,11 +1,11 @@
 <iframe title="YouTube video player" class="youtube-player" type="text/html" width="569" height="456" src="http://www.youtube.com/embed/ZNNIg4zO5dM?rel=0" frameborder="0" allowFullScreen></iframe>
 
 <div class="box share-campaign">
-	<a href="#"><img src="http://www.indiegogo.com/images/button_share_facebook.PNG?1288825226" alt="" width="131"></a>
-	<a href="#"><img src="http://www.indiegogo.com/images/button_share_twitter.PNG?1288825226" alt="" width="131"></a>
+	<a href="http://www.facebook.com/share.php?v=4&amp;src=bm&amp;u=<%= project_path(@project, :only_path => false) %>" rel="nofollow" class="external" title="Share this website on Facebook" 			onclick="window.open(this.href,'sharer','toolbar=0,status=0,width=626,height=436'); return false;"><img src="http://www.indiegogo.com/images/button_share_facebook.PNG?1288825226" alt="" width="131"></a>
+	<a href="http://twitter.com/home?status=Project Echo - <%= @project.name %>: <%= project_path(@project, :only_path => false) %>&amp;source=project-echo" rel="nofollow" class="external" title="Tweet This Campaign!" target="_blank" ><img src="http://www.indiegogo.com/images/button_share_twitter.PNG?1288825226" alt="" width="131"></a>
 	<a href="#"><img src="http://www.indiegogo.com/images/button_share_email.PNG?1288825226" alt="" width="131"></a>
 	<a href="#"><img src="http://www.indiegogo.com/images/button_share_widget.PNG?1288825226" alt="" width="131"></a>
-
+	
 	<hr />
 	<h4>Share this campaign:<input type="text" value="<%= project_path(@project, :only_path => false) %>"><span id="clippy-tooltip" title="Copy to Clipboard">
 		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
