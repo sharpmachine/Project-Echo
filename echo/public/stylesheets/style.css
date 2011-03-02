@@ -432,7 +432,7 @@ form#searchform div { display: inline; }
   padding: 15px;
   margin-bottom: 20px;
   width: 380px;
-  z-index: 1;
+  z-index: 9999;
   border: 1px solid #cccccc;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
