@@ -1,0 +1,25 @@
+<a href="#" onclick="$('#share_with_email_drawer').slideToggle('fast', function() { $('#share_to_email').trigger('focus'); $('#share_from_email').trigger('focus'); });; return false;"><img alt="Icon_email_32" height="16" src="https://www.kickstarter.com/images/site/icon_email_32.png?63f7b0eb8" width="16" /> Email</a> 
+</td> 
+</tr> 
+</table> 
+</div> 
+<div class="share-container middle" id="share_with_email_drawer"> 
+<h6 class="small">Share via email</h6> 
+<div class="grey-frame"> 
+<div class="grey-frame-inner"> 
+<div class="ajax-container"> 
+<div id="share-via-email-form"> 
+<form action="/projects/fringefocus/fringe-focus-poster-prints/shares" class="share_via_ajax" data-remote="true" id="new_share" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="Iyk39fNJL1yHURdvHKuWR0BRAsGhURDjjQPQIxWSgRw=" /></div> 
+<fieldset> 
+<label for="share_to_email">To (Email Address)</label> 
+<div class="ta-squeezer"><input class="input-text text" id="share_to_email" name="share[to_email]" size="30" type="text" /></div> 
+</fieldset> 
+<fieldset> 
+<label for="share_">Message</label> 
+<p>&ldquo;Your friend has recommended that you check out "Fringe Focus Poster Prints!", a Kickstarter project by Rob Loukotka. http://kck.st/eFxzJG&rdquo;</p> 
+</fieldset> 
+<fieldset> 
+<input class="hidden" id="share_kind" name="share[kind]" type="hidden" value="email" /> 
+<input class="green button-neutral submit" id="share_submit" name="commit" type="submit" value="Send" /> 
+</fieldset> 
+</form> 
