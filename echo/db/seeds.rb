@@ -16,7 +16,7 @@ User.destroy_all
     
     (1..Random.new.rand(1..20)).each do
       Update.create(project: @project, content: Faker::Lorem.words(10))
-      Blog.create(project: @project, content: Faker::Lorem.paragraphs(4))
+      Blog.create(project: @project, title: Faker::Company.catch_phrase, content: Faker::Lorem.paragraphs(4))
     end
     
   end

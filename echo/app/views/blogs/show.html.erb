@@ -1,16 +1,1 @@
-<div class="box">
-	
-	<h2 class="entry-title"><%#= post.title %>Post Title</h2>
-	
-	<div class="entry-meta"> 
-						<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://localhost/project-echo/jack/2011/01/27/this-is-a-new-post-2/" title="6:13 am" rel="bookmark"><span class="entry-date">Jan 27, 2011</span></a>					</div><!-- .entry-meta -->
-
-<div class="entry-content">
-<p><img class="alignleft size-thumbnail wp-image-60" src="http://localhost/project-echo/jack/files/2011/01/I-Will-Give-150x150.jpg" alt="" width="150" height="150" style="float:left; margin: 5px 20px 20px 0;"/>
-  <%= @blog.content %>
-</p>
-</div>
-
-<%= link_to 'Edit', edit_project_blog_path(@blog) %> |
-<%= link_to 'Back', project_blogs_path %>
-</div>
+<%= render "blogs/single", post: @blog, single: true %>
