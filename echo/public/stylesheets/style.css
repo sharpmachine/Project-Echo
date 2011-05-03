@@ -424,3 +424,17 @@ form#searchform div { display: inline; }
 .tipsy-south { background-position: bottom center; }
 .tipsy-east { background-position: right center; }
 .tipsy-west { background-position: left center; }
+meter {
+  width: 100%;
+  height: 10px;
+}
+meter::-webkit-meter-horizontal-bar {
+  -webkit-appearance: meter;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dddddd), color-stop(0.2, #eeeeee), color-stop(0.45, #cccccc), color-stop(0.55, #cccccc), to(#dddddd));
+  border-radius: 10px;
+}
+meter::-webkit-meter-horizontal-optimum-value {
+  -webkit-appearance: meter;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#aadd77), color-stop(0.2, #cceeaa), color-stop(0.45, #77aa33), color-stop(0.55, #77aa33), to(#aadd77));
+  border-radius: 10px;
+}

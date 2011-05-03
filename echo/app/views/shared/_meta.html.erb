@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset=utf-8 />
 	<title>Project Echo</title>
+	<!--[if lte IE 8]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 	<%= stylesheet_link_tag "screen", "style", "modal", cache: "all-styles" %>
 	<%= javascript_include_tag "jquery.min", "jquery.tipsy", "rails", "application", cache: "all-scripts"  %>
 	<%= csrf_meta_tag %>
