@@ -17,15 +17,15 @@
 		</div>
 		<span class="project-location"><%= image_tag("marker-location.png") %><%= project.location %></span>
 		
-		<!--<meter min="0" max="<%= project.amount %>" value="2133">Project Progress</meter>-->
+		<meter min="0" max="<%= project.amount %>" value="2133">Project Progress</meter>
 		
-		<div class="project-progress-wrap">
-			<div class="project-progress" id="<%= project.amount %>"> </div>
-		</div>
+		<!--<div class="project-progress-wrap">
+			<div class="project-progress" promised="2133" goal="<%= project.amount %>"> </div>
+		</div>-->
 		
 		<div class="progress-numbers">
-			<div class="progress-percentage"><span>Funded</span></div>
-			<div class="amount-promised"><%= number_to_currency project.amount %><span>Promised</span></div>
+			<div class="progress-percentage"><%= (2133/project.amount.to_f*100).floor %>%<span>Funded</span></div>
+			<div class="amount-promised">$2,133<span>Promised</span></div>
 			<div class="span-2 last days-left"><%= time_ago_in_words(project.deadline) %><span> Days Left</span></div>
 		</div>
 	</div>

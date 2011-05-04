@@ -9,7 +9,7 @@ jQuery.fn.fadeToggle = function(speed, easing, callback) {
   return this.animate({opacity: 'toggle'}, speed, easing, callback);  
 };
  
-$(document).ready(function() {
+$(function() {
 	$('#tellfriend').hide();
   	$(' a.email, #tellfriend a.close').click(function() {
     $("#tellfriend").fadeToggle('slow');
@@ -17,15 +17,20 @@ $(document).ready(function() {
   
 }); 
 
-$(function(){
-	
-	var x = $('.project-progress').attr('id');
-	var y = (Math.floor(x/2133*100));
-	
-	$('.project-progress').each(function(){
-	
-		$(".project-progress").width(y+"%");
-		$(".progress-percentage").prepend(y+'%');
-	return false;
-	});
-});
+// $(function(){
+// 	
+// 	$('.single-project').each(function(){
+// 	
+// 	var progress = $(".project-progress");
+// 	var goal = progress.attr('goal'); //Grab the target goal amount
+// 	var promised = progress.attr('promised'); //Grab the amount pledged so far
+// 	var percentComplete = (Math.floor(promised/goal*100)); //Convert amount pledged so far into percentage
+// 	
+// 	//console.log(e);
+// 	
+// 		progress.width(percentComplete+"%"); //Apply percentage to width of .project-progress in % units, of course
+// 		$(".progress-percentage").prepend(percentComplete+'%'); //Display the percent complete in the .progress-perce
+// 	return false;
+// 	});
+// });
+

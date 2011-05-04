@@ -1,5 +1,5 @@
  article, aside, figure, footer, header, hgroup, 
-menu, nav, section { display: block; }
+menu, nav, section, meter { display: block; }
 
 .box-shadow (@x:0px, @y:0px, @blur:10px, @color:#4B4B4B)
 {
@@ -675,6 +675,7 @@ meter
 {
 	width: 100%;
 	height: 10px;
+	border-radius: 10px;
 }
 
  meter::-webkit-meter-horizontal-bar {
@@ -685,10 +686,8 @@ border-radius: 10px;
  
 meter::-webkit-meter-horizontal-optimum-value {
 -webkit-appearance: meter;
-background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#AD7), color-stop(0.2, #CEA), color-stop(0.45, #7A3), color-stop(0.55, #7A3), to(#AD7));
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0BE0E1), color-stop(0.2, #4BCAF9), color-stop(0.45, @accent-color), color-stop(0.55, @accent-color), to(#0BE0E1));
 border-radius: 10px;
 }
-  
-
 
 
